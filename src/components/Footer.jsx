@@ -1,6 +1,6 @@
 import '../stylings/footer/footer.css';
 import { motion } from "framer-motion";
-import { fadeIn } from "../framermotion/framer";
+import { fadeIn } from '../framermotion/Framer.jsx';
 
 function Footer() {
 

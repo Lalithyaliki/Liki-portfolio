@@ -1,6 +1,6 @@
 import '../stylings/projectpage/projectpage.css';
 import { motion } from "framer-motion";
-import { fadeInUp } from "../framermotion/framer";
+import { fadeInUp } from "../framermotion/Framer.jsx";
 
 function Projectspage() {
 

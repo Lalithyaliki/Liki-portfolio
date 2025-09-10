@@ -11,7 +11,7 @@ import sql from '../images/sql.jpeg';
 import mysql from '../images/mysql.jpeg';
 import oracle from '../images/oracle.jpeg';
 import { motion } from "framer-motion";
-import { fadeInUp } from "../framermotion/framer";
+import { fadeInUp } from "../framermotion/Framer.jsx";
 
 function MainSection() {
 
