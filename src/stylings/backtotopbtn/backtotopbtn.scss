@@ -1,0 +1,27 @@
+@import '../../mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.scroll-btn {
+    position: fixed;
+    right: 13px;
+    bottom: 20px;
+    transition:all .3s ease-in-out;
+
+    .scroll {
+        background-color: var(--scrollbtn-bg);
+        border: 1px solid grey;
+        padding: 3px 8px;
+        border-radius: 50%;
+
+        i {
+            font-size: 20px;
+            color: var(--scrollbtn-color);
+        }
+
+    }
+}

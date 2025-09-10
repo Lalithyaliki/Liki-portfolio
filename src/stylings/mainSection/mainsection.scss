@@ -1,0 +1,424 @@
+@import '../../mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+.mainsection {
+    margin: 85px 20px 20px;
+
+    #home,
+    #aboutme,
+    #skills,
+    #projects,
+    #contactMe {
+        scroll-margin-top: 95px;
+    }
+
+    .heading {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+        position: relative;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+
+        &::before {
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ee0979, #ff6a00);
+            transform: skewX(100deg);
+        }
+    }
+
+    .home {
+        text-align: center;
+        font-family: 'poppins', sans-serif;
+
+        img {
+            width: 45%;
+            height: auto;
+            object-fit: fill;
+            border-radius: 50%;
+
+            @include query('md') {
+                width: 27%;
+                height: auto;
+            }
+        }
+
+        h1 {
+            padding: 10px 0;
+        }
+
+        .known-skills {
+            display: flex;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            gap: 7px;
+            text-transform: capitalize;
+            font-size: 1.5rem;
+
+            h3 {
+                color: var(--heading-skills);
+                font-size: 25px;
+
+            }
+
+            .languages {
+                height: 32px;
+                overflow: hidden;
+
+                span {
+                    display: block;
+                    height: 2rem;
+                    color: aqua;
+                    line-height: 2rem;
+                    animation: slide 5s infinite;
+                }
+            }
+        }
+
+        @keyframes slide {
+
+            0% {
+                transform: translateY(0%);
+            }
+
+            25% {
+                transform: translateY(-100%);
+            }
+
+            50% {
+                transform: translateY(-200%);
+            }
+
+            75% {
+                transform: translateY(-300%);
+            }
+
+            100% {
+                transform: translateY(-400%);
+            }
+
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+
+            img {
+                width: 37px;
+                height: 37px;
+                border: 1px solid grey;
+                padding: 5px;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px gray;
+                }
+            }
+        }
+    }
+
+    .aboutme {
+        margin-top: 60px;
+        border: 1px solid grey;
+        box-shadow: 0px 0px 7px gray;
+        border-radius: 10px;
+        font-family: 'poppins', sans-serif;
+        font-weight: 100;
+        padding: 20px;
+
+        @include query("md") {
+            margin: 70px 50px;
+
+        }
+
+        .details {
+
+            @include query("md") {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            .mydetails {
+
+                @include query("md") {
+                    flex-basis: 65%;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: grey;
+                    text-align: justify;
+                    letter-spacing: .5px;
+                    text-indent: 40px;
+
+                    @include query('md') {
+                        font-size: 17px;
+                        padding-top: 15px;
+                    }
+
+                    span {
+                        font-size: 20px;
+                        color: #ee0979;
+                    }
+                }
+            }
+
+            .profile-image {
+                display: none;
+
+                @include query("md") {
+                    display: block;
+                    flex-basis: 30%;
+                    margin: 20px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        border-radius: 10%;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    .skills-section {
+
+        h2 {
+            letter-spacing: 1px;
+            font-family: "poppins", sans-serif;
+        }
+
+        .carousel-inner {
+            padding: 20px 0px 10px;
+
+            @include query("md") {
+                padding: 30px 0px 20px;
+            }
+
+            .carousel-images {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2px;
+
+                img {
+                    border-radius: 10px;
+                    transition: all 0.4s ease;
+                    z-index: 1;
+                }
+
+                .center-img {
+                    width: 200px;
+                    height: 170px;
+                    z-index: 3;
+
+                    @include query("md") {
+                        width: 300px;
+                        height: 250px;
+                    }
+                }
+
+                .side-img {
+                    width: 140px;
+                    height: 137px;
+                    z-index: 2;
+
+                    @include query("md") {
+                        width: 220px;
+                        height: 200px;
+                    }
+
+                    &.left {
+                        transform: translateX(20px) scale(0.9);
+                        z-index: 1;
+                    }
+
+                    &.right {
+                        transform: translateX(-20px) scale(0.9);
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .projects {
+
+        p {
+            font-size: 16px;
+            color: grey;
+            text-align: justify;
+            letter-spacing: .5px;
+            text-indent: 40px;
+
+            @include query('md') {
+                font-size: 17px;
+                padding-top: 15px;
+            }
+
+            span {
+                font-size: 20px;
+                color: #ee0979;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            max-width: max-content;
+            margin: 25px auto 0px;
+
+            .btn {
+                transition: all .1s ease-in-out;
+                border: 1px solid var(--btn-border);
+                color: var(--btn-color);
+
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+    }
+
+    .contactme {
+        margin-bottom: 60px;
+
+        .pop {
+            position: fixed;
+            top: 10.7%;
+            left: -100%;
+            transform: translateX(-50%);
+            border: 1px solid grey;
+            background-color: transparent;
+            font-size: 17px;
+            color: var(--input-color);
+            width: 60%;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px grey;
+            text-transform: capitalize;
+            transition: all .4s ease-in-out;
+
+        }
+
+        .open {
+            left: 50%;
+        }
+
+        .contact {
+            padding-top: 15px;
+
+
+            @include query("md") {
+                padding: 25px;
+            }
+
+            form {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+
+                @include query("md") {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 25px;
+                }
+            }
+
+            .input-details {
+                position: relative;
+
+                input,
+                textarea {
+                    width: 100%;
+                    outline: none;
+                    padding: 15px;
+                    background-color: transparent;
+                    text-transform: capitalize;
+                    border: 2px solid grey;
+                    border-radius: 10px;
+                    font-size: 15px;
+                    color: var(--input-color);
+
+                    @include query("md") {
+                        font-size: 17px;
+                    }
+
+                    &:focus {
+                        border: 2px solid var(--btn-border);
+                    }
+
+                    &:focus+label,
+                    &:not(:placeholder-shown)+label {
+                        top: -12px;
+                        left: -5px;
+                        background-color: var(--input-focus);
+                        padding: 0px 4px;
+                        color: var(--label-focus);
+                    }
+
+                }
+
+                .error {
+                    border: 2px solid red;
+                    box-shadow: 0px 0px 5px red;
+                }
+
+                label {
+                    position: absolute;
+                    left: 17px;
+                    top: 17px;
+                    transition: all .2s ease-in-out;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: grey;
+
+                }
+            }
+
+            .text-area {
+
+                @include query("md") {
+                    grid-column: span 2;
+                }
+            }
+
+            .btn {
+                display: block;
+                margin: 0 auto;
+                border: 1px solid var(--btn-border);
+                color: var(--btn-color);
+                text-transform: capitalize;
+
+                @include query("md") {
+                    grid-column: span 2;
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+
+            }
+        }
+    }
+}

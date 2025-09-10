@@ -1,0 +1,97 @@
+@import '../../mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.project-site {
+    margin: 75px 0px 40px;
+    font-family: "poppins", sans-serif;
+
+    h2 {
+        display: block;
+        width: max-content;
+        margin: 10px auto;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 30px;
+
+        @include query("md") {
+            font-size: 40px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 4px;
+            transform: translateX(-50%) skewX(100deg);
+            background: linear-gradient(90deg, #ee0979, #ff6a00);
+            animation: underlineExpand .5s forwards ease-out;
+        }
+    }
+
+    @keyframes underlineExpand {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: 200%;
+        }
+    }
+
+    .My-projects {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+        margin: 40px 20px;
+
+        @include query('md') {
+            grid-template-columns: repeat(2, 1fr);
+            margin: 60px 40px;
+            gap: 40px;
+        }
+
+        .project {
+            border: 1px solid grey;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+            padding: 25px 25px 57px;
+            position: relative;
+
+            h3 {
+                color: var(--heading);
+                letter-spacing: .7px;
+                font-size: 20px;
+                padding-bottom: 10px;
+            }
+
+            p {
+                color: gray;
+                letter-spacing: .7px;
+            }
+
+            a {
+                position: absolute;
+                bottom: 17px;
+                transition: transform 0.4s ease-in-out;
+
+                .site-btn {
+                    padding: 3px 15px;
+                    border: none;
+                    background-color: var(--input-color);
+                    color: var(--scrollbtn-color)
+                }
+
+                &:active {
+                    transform: scale(.98);
+                }
+            }
+        }
+    }
+}

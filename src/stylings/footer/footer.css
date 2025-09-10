@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+.global-text {
+  background: linear-gradient(135deg, #ff6a00, #ee0979, #00c9ff, #9d50bb);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+:root {
+  --nav-bg: lightblue;
+  --btn-color: #000;
+  --box-shadow: grey;
+  --body-bg: #fff;
+  --heading-skills: coral;
+  --input-color: #000;
+  --btn-border: #000;
+  --input-focus: #fff;
+  --label-focus: #000;
+  --footer-text: #000;
+  --scrollbtn-bg: #000;
+  --scrollbtn-color: #fff;
+  --heading: #000;
+}
+:root[data-theme=dark] {
+  --nav-bg: black;
+  --btn-color: white;
+  --box-shadow: white;
+  --body-bg: #212121;
+  --heading-skills: #fff;
+  --input-color: white;
+  --btn-border: grey;
+  --input-focus: #212121;
+  --label-focus: #fff;
+  --footer-text: grey;
+  --scrollbtn-bg: white;
+  --scrollbtn-color: black;
+  --heading: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: transparent;
+  border: 1px solid grey;
+  box-shadow: 0px 0px 7px gray;
+  margin: 0 20px 15px;
+  text-align: center;
+}
+.footer p {
+  color: var(--footer-text);
+  padding: 15px;
+  letter-spacing: 0.7px;
+  margin-bottom: 0px;
+}/*# sourceMappingURL=footer.css.map */
