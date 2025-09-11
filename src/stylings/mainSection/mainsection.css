@@ -220,78 +220,105 @@ body {
   letter-spacing: 1px;
   font-family: "poppins", sans-serif;
 }
-.mainsection .skills-section .carousel-inner {
+.mainsection .skills-section .carousel {
+  position: relative;
+}
+.mainsection .skills-section .carousel .carousel-inner {
   padding: 20px 0px 10px;
 }
 @media (min-width: 768px) {
-  .mainsection .skills-section .carousel-inner {
+  .mainsection .skills-section .carousel .carousel-inner {
     padding: 30px 0px 20px;
   }
 }
-.mainsection .skills-section .carousel-inner .carousel-images {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2px;
 }
-.mainsection .skills-section .carousel-inner .carousel-images img {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images img {
   border-radius: 10px;
   transition: all 0.4s ease;
   z-index: 1;
 }
-.mainsection .skills-section .carousel-inner .carousel-images .center-img {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images .center-img {
   width: 120px;
   height: 120px;
   z-index: 2;
 }
 @media (min-width: 576px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .center-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .center-img {
     width: 160px;
     height: 160px;
   }
 }
 @media (min-width: 768px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .center-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .center-img {
     width: 195px;
     height: 195px;
   }
 }
 @media (min-width: 1024px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .center-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .center-img {
     width: 220px;
     height: 220px;
   }
 }
-.mainsection .skills-section .carousel-inner .carousel-images .side-img {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img {
   width: 100px;
   height: 100px;
   z-index: 1;
 }
 @media (min-width: 576px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .side-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img {
     width: 120px;
     height: 120px;
   }
 }
 @media (min-width: 768px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .side-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img {
     width: 160px;
     height: 160px;
   }
 }
 @media (min-width: 1024px) {
-  .mainsection .skills-section .carousel-inner .carousel-images .side-img {
+  .mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img {
     width: 180px;
     height: 180px;
   }
 }
-.mainsection .skills-section .carousel-inner .carousel-images .side-img.left {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img.left {
   transform: translateX(20px) scale(0.9);
   z-index: 1;
 }
-.mainsection .skills-section .carousel-inner .carousel-images .side-img.right {
+.mainsection .skills-section .carousel .carousel-inner .carousel-images .side-img.right {
   transform: translateX(-20px) scale(0.9);
   z-index: 1;
+}
+.mainsection .skills-section .carousel .carousel-control-prev {
+  position: absolute;
+  right: 40px;
+  top: -25px;
+  border: 1px solid red;
+  width: 7%;
+}
+@media (min-width: 576px) {
+  .mainsection .skills-section .carousel .carousel-control-prev {
+    display: none;
+  }
+}
+.mainsection .skills-section .carousel .carousel-control-next {
+  position: absolute;
+  right: 0px;
+  top: -25px;
+  width: 7%;
+  border: 1px solid red;
+}
+@media (min-width: 576px) {
+  .mainsection .skills-section .carousel .carousel-control-next {
+    display: none;
+  }
 }
 .mainsection .projects p {
   font-size: 12px;

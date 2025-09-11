@@ -153,6 +153,15 @@ function MainSection() {
                             </div>
                         </div>
                     </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </motion.div>
 
@@ -160,7 +169,7 @@ function MainSection() {
                 <h2 className="heading global-text">Projects</h2>
                 <p><span>W</span>elcome to my portfolio! I’m passionate about building responsive, user-friendly websites and applications that bring ideas to life. Over time, I’ve worked on multiple projects that showcase my skills in web development, design, and problem-solving. Each project reflects my focus on clean code, creative interfaces, and delivering a smooth user experience. Click the button below to explore my projects and see my work in action!</p>
                 <Link to="/projects" className="btn">
-                      view projects
+                    view projects
 
                 </Link>
             </motion.div>

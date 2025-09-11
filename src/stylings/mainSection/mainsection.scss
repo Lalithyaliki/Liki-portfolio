@@ -211,81 +211,109 @@ body {
             font-family: "poppins", sans-serif;
         }
 
-        .carousel-inner {
-            padding: 20px 0px 10px;
+        .carousel {
+            position: relative;
 
-            @include query("md") {
-                padding: 30px 0px 20px;
-            }
+            .carousel-inner {
+                padding: 20px 0px 10px;
 
-            .carousel-images {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 2px;
-
-                img {
-                    border-radius: 10px;
-                    transition: all 0.4s ease;
-                    z-index: 1;
+                @include query("md") {
+                    padding: 30px 0px 20px;
                 }
 
-                .center-img {
+                .carousel-images {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2px;
 
-                    width: 120px;
-                    height: 120px;
-                    z-index: 2; // on top
-
-                    @include query('sm') {
-                        width: 160px;
-                        height: 160px;
+                    img {
+                        border-radius: 10px;
+                        transition: all 0.4s ease;
+                        z-index: 1;
                     }
 
-                    @include query('md') {
-                        width: 195px;
-                        height: 195px;
-                    }
+                    .center-img {
 
-                    @include query('lg') {
-                        width: 220px;
-                        height: 220px;
-                    }
-                }
-
-                .side-img {
-
-                    width: 100px;
-                    height: 100px;
-                    z-index: 1;
-
-                    @include query('sm') {
                         width: 120px;
                         height: 120px;
+                        z-index: 2; // on top
+
+                        @include query('sm') {
+                            width: 160px;
+                            height: 160px;
+                        }
+
+                        @include query('md') {
+                            width: 195px;
+                            height: 195px;
+                        }
+
+                        @include query('lg') {
+                            width: 220px;
+                            height: 220px;
+                        }
                     }
 
-                    @include query('md') {
-                        width: 160px;
-                        height: 160px;
-                    }
+                    .side-img {
 
-                    @include query('lg') {
-                        width: 180px;
-                        height: 180px;
-                    }
-
-                    &.left {
-                        transform: translateX(20px) scale(0.9);
+                        width: 100px;
+                        height: 100px;
                         z-index: 1;
-                    }
 
-                    &.right {
-                        transform: translateX(-20px) scale(0.9);
-                        z-index: 1;
+                        @include query('sm') {
+                            width: 120px;
+                            height: 120px;
+                        }
+
+                        @include query('md') {
+                            width: 160px;
+                            height: 160px;
+                        }
+
+                        @include query('lg') {
+                            width: 180px;
+                            height: 180px;
+                        }
+
+                        &.left {
+                            transform: translateX(20px) scale(0.9);
+                            z-index: 1;
+                        }
+
+                        &.right {
+                            transform: translateX(-20px) scale(0.9);
+                            z-index: 1;
+                        }
                     }
+                }
+            }
+
+            .carousel-control-prev {
+                position: absolute;
+                right: 40px;
+                top: -25px;
+                border: 1px solid red;
+                width: 7%;
+             
+                @include query("sm"){
+                    display: none;
+                }
+
+            }
+
+            .carousel-control-next {
+                position: absolute;
+                right: 0px;
+                top: -25px;
+                width: 7%;
+                border: 1px solid red;
+
+                 @include query("sm"){
+                    display: none;
                 }
             }
         }
-
     }
 
     .projects {
@@ -319,7 +347,7 @@ body {
             transition: all .1s ease-in-out;
             border: 1px solid var(--btn-border);
             color: var(--btn-color);
-        
+
             &:active {
                 transform: scale(0.98);
             }
