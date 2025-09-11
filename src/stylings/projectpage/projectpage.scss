@@ -73,7 +73,12 @@
 
             p {
                 color: gray;
+                font-size: 13px;
                 letter-spacing: .7px;
+
+                @include query("md"){
+                    font-size: 15px;
+                }
             }
 
             a {

@@ -161,15 +161,19 @@ body {
                 }
 
                 p {
-                    font-size: 16px;
+                    font-size: 12px;
                     color: grey;
+                    letter-spacing: .4px;
                     text-align: justify;
-                    letter-spacing: .5px;
                     text-indent: 40px;
 
+                    @include query("sm") {
+                        font-size: 15px;
+
+                    }
+
                     @include query('md') {
-                        font-size: 17px;
-                        padding-top: 15px;
+                        padding-top: 16px;
                     }
 
                     span {
@@ -227,24 +231,46 @@ body {
                 }
 
                 .center-img {
-                    width: 200px;
-                    height: 170px;
-                    z-index: 3;
 
-                    @include query("md") {
-                        width: 300px;
-                        height: 250px;
+                    width: 120px;
+                    height: 120px;
+                    z-index: 2; // on top
+
+                    @include query('sm') {
+                        width: 160px;
+                        height: 160px;
+                    }
+
+                    @include query('md') {
+                        width: 195px;
+                        height: 195px;
+                    }
+
+                    @include query('lg') {
+                        width: 220px;
+                        height: 220px;
                     }
                 }
 
                 .side-img {
-                    width: 140px;
-                    height: 137px;
-                    z-index: 2;
 
-                    @include query("md") {
-                        width: 220px;
-                        height: 200px;
+                    width: 100px;
+                    height: 100px;
+                    z-index: 1;
+
+                    @include query('sm') {
+                        width: 120px;
+                        height: 120px;
+                    }
+
+                    @include query('md') {
+                        width: 160px;
+                        height: 160px;
+                    }
+
+                    @include query('lg') {
+                        width: 180px;
+                        height: 180px;
                     }
 
                     &.left {
@@ -265,15 +291,19 @@ body {
     .projects {
 
         p {
-            font-size: 16px;
+            font-size: 12px;
             color: grey;
+            letter-spacing: .4px;
             text-align: justify;
-            letter-spacing: .5px;
             text-indent: 40px;
 
+            @include query("sm") {
+                font-size: 15px;
+
+            }
+
             @include query('md') {
-                font-size: 17px;
-                padding-top: 15px;
+                padding-top: 16px;
             }
 
             span {
@@ -282,8 +312,6 @@ body {
             }
         }
 
-
-
         .btn {
             display: block;
             max-width: max-content;
@@ -291,7 +319,7 @@ body {
             transition: all .1s ease-in-out;
             border: 1px solid var(--btn-border);
             color: var(--btn-color);
-
+        
             &:active {
                 transform: scale(0.98);
             }
