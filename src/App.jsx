@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<MainSection />} />
         <Route path="/projects" element={<Projectspage />} />
       </Routes>
-      
+
       <Footer />
       <BackToTopBtn />
     </>

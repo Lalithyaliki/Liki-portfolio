@@ -282,19 +282,16 @@ body {
   font-size: 20px;
   color: #ee0979;
 }
-.mainsection .projects a {
-  text-decoration: none;
+.mainsection .projects .btn {
   display: block;
   max-width: -moz-max-content;
   max-width: max-content;
   margin: 25px auto 0px;
-}
-.mainsection .projects a .btn {
   transition: all 0.1s ease-in-out;
   border: 1px solid var(--btn-border);
   color: var(--btn-color);
 }
-.mainsection .projects a .btn:active {
+.mainsection .projects .btn:active {
   transform: scale(0.98);
 }
 .mainsection .contactme {

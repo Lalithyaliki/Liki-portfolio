@@ -12,6 +12,8 @@ import mysql from '../images/mysql.jpeg';
 import oracle from '../images/oracle.jpeg';
 import { motion } from "framer-motion";
 import { fadeInUp } from "../framermotion/Framer.jsx";
+import { Link } from "react-router-dom";
+
 
 function MainSection() {
 
@@ -157,9 +159,12 @@ function MainSection() {
             <motion.div {...fadeInUp} className="aboutme projects" id="projects">
                 <h2 className="heading global-text">Projects</h2>
                 <p><span>W</span>elcome to my portfolio! I’m passionate about building responsive, user-friendly websites and applications that bring ideas to life. Over time, I’ve worked on multiple projects that showcase my skills in web development, design, and problem-solving. Each project reflects my focus on clean code, creative interfaces, and delivering a smooth user experience. Click the button below to explore my projects and see my work in action!</p>
-                <a href="/projects">
-                <button className="btn">view projects</button></a>
-                        
+                <Link to="/projects" onClick={() => {
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                }}>
+                    <button className="btn">view projects</button>
+                </Link>
             </motion.div>
 
             <motion.div {...fadeInUp} className="aboutme contactme" id="contactMe">

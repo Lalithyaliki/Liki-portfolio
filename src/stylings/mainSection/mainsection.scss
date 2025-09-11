@@ -282,22 +282,20 @@ body {
             }
         }
 
-        a {
-            text-decoration: none;
+
+
+        .btn {
             display: block;
             max-width: max-content;
             margin: 25px auto 0px;
+            transition: all .1s ease-in-out;
+            border: 1px solid var(--btn-border);
+            color: var(--btn-color);
 
-            .btn {
-                transition: all .1s ease-in-out;
-                border: 1px solid var(--btn-border);
-                color: var(--btn-color);
-
-
-                &:active {
-                    transform: scale(0.98);
-                }
+            &:active {
+                transform: scale(0.98);
             }
+
         }
     }
 
