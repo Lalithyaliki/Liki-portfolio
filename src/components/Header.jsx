@@ -11,12 +11,12 @@ function Header() {
 
     const [openlinks, setlinks] = useState(false);
     const [theme, settheme] = useState(() => {
-        return localStorage.getItem("theme") || "dark";
+        return sessionStorage.getItem("theme") || "dark";
     });
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
+        sessionStorage.setItem("theme", theme);
     }, [theme]);
 
     const toggletheme = () => {

@@ -21,6 +21,7 @@
   --scrollbtn-bg: #000;
   --scrollbtn-color: #fff;
   --heading: #000;
+  --arrow-color: invert(1);
 }
 :root[data-theme=dark] {
   --nav-bg: black;
@@ -36,6 +37,7 @@
   --scrollbtn-bg: white;
   --scrollbtn-color: black;
   --heading: #fff;
+  --arrow-color: invert(0);
 }
 
 * {
@@ -179,7 +181,7 @@ body {
   }
 }
 .mainsection .aboutme .details .mydetails p {
-  font-size: 12px;
+  font-size: 13px;
   color: grey;
   letter-spacing: 0.4px;
   text-align: justify;
@@ -296,28 +298,35 @@ body {
   transform: translateX(-20px) scale(0.9);
   z-index: 1;
 }
-.mainsection .skills-section .carousel .carousel-control-prev {
-  position: absolute;
-  top: -110%;
-  left: 78%;
-}
-@media (min-width: 576px) {
-  .mainsection .skills-section .carousel .carousel-control-prev {
-    display: none;
-  }
-}
+.mainsection .skills-section .carousel .carousel-control-prev,
 .mainsection .skills-section .carousel .carousel-control-next {
-  position: absolute;
-  top: -110%;
-  right: -10px;
+  top: -25px;
+  bottom: auto;
+  width: auto;
+  height: auto;
+  color: green;
+}
+.mainsection .skills-section .carousel .carousel-control-prev .carousel-control-prev-icon,
+.mainsection .skills-section .carousel .carousel-control-prev .carousel-control-next-icon,
+.mainsection .skills-section .carousel .carousel-control-next .carousel-control-prev-icon,
+.mainsection .skills-section .carousel .carousel-control-next .carousel-control-next-icon {
+  filter: var(--arrow-color);
 }
 @media (min-width: 576px) {
+  .mainsection .skills-section .carousel .carousel-control-prev,
   .mainsection .skills-section .carousel .carousel-control-next {
     display: none;
   }
 }
+.mainsection .skills-section .carousel .carousel-control-prev {
+  right: 40px;
+  left: auto;
+}
+.mainsection .skills-section .carousel .carousel-control-next {
+  right: 10px;
+}
 .mainsection .projects p {
-  font-size: 12px;
+  font-size: 13px;
   color: grey;
   letter-spacing: 0.4px;
   text-align: justify;
@@ -345,9 +354,15 @@ body {
   transition: all 0.1s ease-in-out;
   border: 1px solid var(--btn-border);
   color: var(--btn-color);
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 .mainsection .projects .btn:active {
   transform: scale(0.98);
+}
+.mainsection .projects .btn i {
+  font-size: 15px;
 }
 .mainsection .contactme {
   margin-bottom: 60px;
@@ -440,6 +455,7 @@ body {
   left: 17px;
   top: 17px;
   transition: all 0.2s ease-in-out;
+  font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   color: grey;
@@ -455,6 +471,12 @@ body {
   border: 1px solid var(--btn-border);
   color: var(--btn-color);
   text-transform: capitalize;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.mainsection .contactme .contact .btn i {
+  font-size: 15px;
 }
 @media (min-width: 768px) {
   .mainsection .contactme .contact .btn {

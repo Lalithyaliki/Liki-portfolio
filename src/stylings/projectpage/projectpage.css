@@ -21,6 +21,7 @@
   --scrollbtn-bg: #000;
   --scrollbtn-color: #fff;
   --heading: #000;
+  --arrow-color: invert(1);
 }
 :root[data-theme=dark] {
   --nav-bg: black;
@@ -36,6 +37,7 @@
   --scrollbtn-bg: white;
   --scrollbtn-color: black;
   --heading: #fff;
+  --arrow-color: invert(0);
 }
 
 * {
@@ -120,6 +122,7 @@
 .project-site .My-projects .project a {
   position: absolute;
   bottom: 17px;
+  text-decoration: none;
   transition: transform 0.4s ease-in-out;
 }
 .project-site .My-projects .project a .site-btn {
@@ -127,6 +130,9 @@
   border: none;
   background-color: var(--input-color);
   color: var(--scrollbtn-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .project-site .My-projects .project a:active {
   transform: scale(0.98);

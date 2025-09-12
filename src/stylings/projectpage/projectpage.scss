@@ -76,7 +76,7 @@
                 font-size: 13px;
                 letter-spacing: .7px;
 
-                @include query("md"){
+                @include query("md") {
                     font-size: 15px;
                 }
             }
@@ -84,13 +84,18 @@
             a {
                 position: absolute;
                 bottom: 17px;
+                text-decoration: none;
                 transition: transform 0.4s ease-in-out;
 
                 .site-btn {
                     padding: 3px 15px;
                     border: none;
                     background-color: var(--input-color);
-                    color: var(--scrollbtn-color)
+                    color: var(--scrollbtn-color);
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
                 }
 
                 &:active {

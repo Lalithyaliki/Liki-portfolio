@@ -41,6 +41,7 @@ $light-theme : (nav-bg: lightblue,
     scrollbtn-bg: #000,
     scrollbtn-color: #fff,
     heading:#000,
+    arrow-color:invert(1),
 );
 
 $dark-theme : (nav-bg:black,
@@ -56,6 +57,7 @@ $dark-theme : (nav-bg:black,
     scrollbtn-bg:white,
     scrollbtn-color:black,
     heading:#fff,
+    arrow-color:invert(0),
 );
 
 

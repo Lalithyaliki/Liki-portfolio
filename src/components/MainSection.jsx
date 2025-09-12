@@ -169,8 +169,7 @@ function MainSection() {
                 <h2 className="heading global-text">Projects</h2>
                 <p><span>W</span>elcome to my portfolio! I’m passionate about building responsive, user-friendly websites and applications that bring ideas to life. Over time, I’ve worked on multiple projects that showcase my skills in web development, design, and problem-solving. Each project reflects my focus on clean code, creative interfaces, and delivering a smooth user experience. Click the button below to explore my projects and see my work in action!</p>
                 <Link to="/projects" className="btn">
-                    view projects
-
+                    view projects <i className="bi bi-stack"></i>
                 </Link>
             </motion.div>
 
@@ -210,7 +209,7 @@ function MainSection() {
                             <label htmlFor="textarea">Enter message *</label>
                         </div>
                         <button type="submit" className="btn">
-                            submit
+                            send  <i className="bi-arrow-right-circle"></i>
                         </button>
                     </form>
                 </div>
