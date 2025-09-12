@@ -289,25 +289,25 @@ body {
                 }
             }
 
-            .carousel-control-prev {
-                position: absolute;
-                top: -110%;
-                left:78%;
+            // .carousel-control-prev {
+            //     position: absolute;
+            //     top: -110%;
+            //     left:78%;
 
-                @include query("sm") {
-                    display: none;
-                }
-            }
+            //     @include query("sm") {
+            //         display: none;
+            //     }
+            // }
 
-            .carousel-control-next {
-                position: absolute;
-                top: -110%;
-                right: -10px;
+            // .carousel-control-next {
+            //     position: absolute;
+            //     top: -110%;
+            //     right: -10px;
 
-                @include query("sm") {
-                    display: none;
-                }
-            }
+            //     @include query("sm") {
+            //         display: none;
+            //     }
+            // }
         }
     }
 
