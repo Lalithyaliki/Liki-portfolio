@@ -154,13 +154,13 @@ function MainSection() {
                         </div>
                     </div>
 
-                    <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button className="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
                     </button>
                 </div>
             </motion.div>
@@ -204,6 +204,7 @@ function MainSection() {
                         <div className="input-details text-area">
                             <textarea type="textarea" value={input.textarea}
                                 onChange={onchange}
+                                id="textarea"
                                 name="textarea"
                                 placeholder=""></textarea>
                             <label htmlFor="textarea">Enter message *</label>

@@ -237,7 +237,7 @@ body {
 
                         width: 120px;
                         height: 120px;
-                        z-index: 2; // on top
+                        z-index: 2;
 
                         @include query('sm') {
                             width: 160px;
@@ -291,25 +291,20 @@ body {
 
             .carousel-control-prev {
                 position: absolute;
-                right: 40px;
-                top: -25px;
-                border: 1px solid red;
-                width: 7%;
-             
-                @include query("sm"){
+                top: -110%;
+                left:78%;
+
+                @include query("sm") {
                     display: none;
                 }
-
             }
 
             .carousel-control-next {
                 position: absolute;
-                right: 0px;
-                top: -25px;
-                width: 7%;
-                border: 1px solid red;
+                top: -110%;
+                right: -10px;
 
-                 @include query("sm"){
+                @include query("sm") {
                     display: none;
                 }
             }

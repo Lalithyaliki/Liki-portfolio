@@ -298,10 +298,8 @@ body {
 }
 .mainsection .skills-section .carousel .carousel-control-prev {
   position: absolute;
-  right: 40px;
-  top: -25px;
-  border: 1px solid red;
-  width: 7%;
+  top: -110%;
+  left: 78%;
 }
 @media (min-width: 576px) {
   .mainsection .skills-section .carousel .carousel-control-prev {
@@ -310,10 +308,8 @@ body {
 }
 .mainsection .skills-section .carousel .carousel-control-next {
   position: absolute;
-  right: 0px;
-  top: -25px;
-  width: 7%;
-  border: 1px solid red;
+  top: -110%;
+  right: -10px;
 }
 @media (min-width: 576px) {
   .mainsection .skills-section .carousel .carousel-control-next {
