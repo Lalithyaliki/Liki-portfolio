@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import '../stylings/mainSection/mainsection.css';
 import image from '../images/nazriya.jpeg';
 import Html from '../images/html.png';
@@ -13,7 +13,6 @@ import oracle from '../images/oracle.jpeg';
 import { motion } from "framer-motion";
 import { fadeInUp } from "../framermotion/Framer.jsx";
 import { Link } from "react-router-dom";
-
 
 function MainSection() {
 
@@ -127,7 +126,7 @@ function MainSection() {
 
             <motion.div {...fadeInUp} className="aboutme skills-section" id="skills">
                 <h2 className="heading global-text">Skills</h2>
-                <div id="customCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div id="customCarousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
                             <div className="carousel-images">

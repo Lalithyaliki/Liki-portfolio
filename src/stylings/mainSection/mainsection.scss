@@ -302,18 +302,28 @@ body {
                     filter: var(--arrow-color);
                 }
 
-                @include query("sm") {
-                    display: none;
+                @include query('sm') {
+                    top: 0;
                 }
             }
 
             .carousel-control-prev {
                 right: 40px;
                 left: auto;
+
+                @include query('sm') {
+                    left: 0;
+                    right: auto;
+                    top: 40%;
+                }
             }
 
             .carousel-control-next {
                 right: 10px;
+
+                @include query('sm') {
+                    top: 40%;
+                }
             }
         }
     }
@@ -476,9 +486,9 @@ body {
                 gap: 5px;
                 align-items: center;
 
-                 i {
-                font-size: 15px;
-            }
+                i {
+                    font-size: 15px;
+                }
 
                 @include query("md") {
                     grid-column: span 2;

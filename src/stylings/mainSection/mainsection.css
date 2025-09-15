@@ -315,15 +315,27 @@ body {
 @media (min-width: 576px) {
   .mainsection .skills-section .carousel .carousel-control-prev,
   .mainsection .skills-section .carousel .carousel-control-next {
-    display: none;
+    top: 0;
   }
 }
 .mainsection .skills-section .carousel .carousel-control-prev {
   right: 40px;
   left: auto;
 }
+@media (min-width: 576px) {
+  .mainsection .skills-section .carousel .carousel-control-prev {
+    left: 0;
+    right: auto;
+    top: 40%;
+  }
+}
 .mainsection .skills-section .carousel .carousel-control-next {
   right: 10px;
+}
+@media (min-width: 576px) {
+  .mainsection .skills-section .carousel .carousel-control-next {
+    top: 40%;
+  }
 }
 .mainsection .projects p {
   font-size: 13px;

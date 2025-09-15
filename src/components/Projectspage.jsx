@@ -1,8 +1,13 @@
 import '../stylings/projectpage/projectpage.css';
 import { motion } from "framer-motion";
 import { fadeInUp } from "../framermotion/Framer.jsx";
+import React, { useEffect } from 'react';
 
 function Projectspage() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="project-site">
