@@ -32,7 +32,7 @@ function Projectspage() {
                 <motion.div {...fadeInUp} className="project todo">
                     <h3>Todo-List</h3>
                     <p>Developed a To-Do Application using React, allowing users to add, edit, and delete tasks efficiently. The app features a clean and intuitive UI, with smooth transitions and responsive design for a seamless experience across devices. Implemented features like task completion tracking and organized task lists to enhance usability. </p>
-                    <a href="#"><button className="site-btn">visit site <i className="bi bi-door-open"></i></button></a>
+                    <a href="https://todo-list-one-iota-20.vercel.app/"  target='_blank' rel="noopener noreferrer" ><button className="site-btn">visit site <i className="bi bi-door-open"></i></button></a>
                 </motion.div>
             </div>
         </div >

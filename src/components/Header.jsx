@@ -10,6 +10,15 @@ function Header() {
     const hidenavlinks = location.pathname === "/projects";
 
     const [openlinks, setlinks] = useState(false);
+
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+        setlinks(false);
+    };
+
     const [theme, settheme] = useState(() => {
         return sessionStorage.getItem("theme") || "dark";
     });
@@ -34,12 +43,13 @@ function Header() {
             {!hidenavlinks && (
                 <div className={openlinks ? "nav-links active" : "nav-links"}>
                     <div className='nav-links-close-btn'>
-                        <button className='btn' onClick={() => setlinks(false)}>X</button></div>
-                    <a href='#home' onClick={() => setlinks(false)}>home</a>
-                    <a href='#aboutme' onClick={() => setlinks(false)}>about</a>
-                    <a href='#skills' onClick={() => setlinks(false)}>skills</a>
-                    <a href='#projects' onClick={() => setlinks(false)}>projects</a>
-                    <a href='#contactMe' onClick={() => setlinks(false)}>contact me</a>
+                        <button className='btn' onClick={() => setlinks(false)}>X</button>
+                    </div>
+                    <button onClick={() => scrollToSection("home")}>Home</button>
+                    <button onClick={() => scrollToSection("aboutme")}>About</button>
+                    <button onClick={() => scrollToSection("skills")}>Skills</button>
+                    <button onClick={() => scrollToSection("projects")}>Projects</button>
+                    <button onClick={() => scrollToSection("contactMe")}>Contact</button>
                 </div>
             )}
 
