@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../stylings/mainSection/mainsection.css';
 import image from '../images/nazriya.jpeg';
 import Html from '../images/html.png';
@@ -26,6 +26,7 @@ function MainSection() {
     const [error, seterror] = useState({
         name: false,
         email: false,
+        textarea: false,
     });
 
     const onchange = (e) => {
@@ -44,6 +45,7 @@ function MainSection() {
         const a = ({
             name: input.name.trim() === "",
             email: input.email.trim() === "",
+            textarea: input.textarea.trim() === "",
         });
 
         seterror(a);
@@ -200,10 +202,11 @@ function MainSection() {
                             <label htmlFor="email">Email *</label>
                         </div>
                         <div className="input-details text-area">
-                            <textarea type="textarea" value={input.textarea}
+                            <textarea type="textarea"
+                                value={input.textarea}
                                 onChange={onchange}
-                                id="textarea"
                                 name="textarea"
+                                className={error.textarea ? "error" : ""}
                                 placeholder=""></textarea>
                             <label htmlFor="textarea">Enter message *</label>
                         </div>
