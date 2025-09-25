@@ -1,0 +1,60 @@
+@import '../../mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.iconsdata {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .icon-wrapper {
+
+        padding: 7px 0px 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            .icon-tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        i {
+            width: 35px;
+            height: 35px;
+            font-size: 17px;
+            padding: 10px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.devicon-github-original,
+            &.devicon-vercel-plain {
+                color: var(--btn-color);
+            }
+        }
+
+        .icon-tooltip {
+            position: absolute;
+            top: -33px;
+            opacity: 0;
+            visibility: hidden;
+            color: var(--btn-color);
+            text-transform: capitalize;
+            font-size: 14px;
+            background-color: var(--body-bg);
+            padding: 4px 8px;
+            box-shadow: 0px 0px 7px grey;
+            transition: all .4s ease-in-out;
+        }
+    }
+}
