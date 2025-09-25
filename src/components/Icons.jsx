@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../stylings/icons/Icons.css'
+import '../stylings/icons/icons.css';
 
 
 function Icons({ type }) {
