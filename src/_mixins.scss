@@ -42,6 +42,7 @@ $light-theme : (nav-bg: lightblue,
     scrollbtn-color: #fff,
     heading:#000,
     arrow-color:invert(1),
+    sending-bg: rgba(255, 255, 255, 0.5),
 );
 
 $dark-theme : (nav-bg:black,
@@ -58,6 +59,7 @@ $dark-theme : (nav-bg:black,
     scrollbtn-color:black,
     heading:#fff,
     arrow-color:invert(0),
+    sending-bg: rgba(0, 0,0, 0.5),
 );
 
 

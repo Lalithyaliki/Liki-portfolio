@@ -22,6 +22,7 @@
   --scrollbtn-color: #fff;
   --heading: #000;
   --arrow-color: invert(1);
+  --sending-bg: rgba(255, 255, 255, 0.5);
 }
 :root[data-theme=dark] {
   --nav-bg: black;
@@ -38,6 +39,7 @@
   --scrollbtn-color: black;
   --heading: #fff;
   --arrow-color: invert(0);
+  --sending-bg: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -59,6 +61,58 @@ body {
 .mainsection #projects,
 .mainsection #contactMe {
   scroll-margin-top: 95px;
+}
+.mainsection .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--sending-bg);
+  opacity: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: all 0.2s ease-in-out;
+}
+.mainsection .overlay .sending {
+  color: var(--input-color);
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+}
+.mainsection .overlay .sending .dots span {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  animation: blink 1s infinite;
+}
+.mainsection .overlay .sending .dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.mainsection .overlay .sending .dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mainsection .overlay .sending .dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes blink {
+  0%, 20% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+.mainsection .show {
+  display: flex;
+  opacity: 1;
 }
 .mainsection .heading {
   display: block;
@@ -381,19 +435,34 @@ body {
 }
 .mainsection .contactme .pop {
   position: fixed;
-  top: 10.7%;
+  top: 10.1%;
   left: -100%;
   transform: translateX(-50%);
   border: 1px solid grey;
-  background-color: transparent;
-  font-size: 17px;
-  color: var(--input-color);
-  width: 60%;
-  padding: 10px;
+  background-color: lightgreen;
+  font-size: 12px;
+  color: black;
+  width: 75%;
+  padding: 7px;
+  letter-spacing: 1px;
   text-align: center;
   box-shadow: 0px 0px 10px grey;
   text-transform: capitalize;
   transition: all 0.4s ease-in-out;
+  z-index: 999;
+}
+@media (min-width: 576px) {
+  .mainsection .contactme .pop {
+    width: 55%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .mainsection .contactme .pop {
+    width: 40%;
+    font-size: 15px;
+  }
 }
 .mainsection .contactme .open {
   left: 50%;
@@ -424,11 +493,11 @@ body {
   width: 100%;
   outline: none;
   padding: 15px;
+  letter-spacing: 1px;
   background-color: transparent;
-  text-transform: capitalize;
   border: 1px solid grey;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--input-color);
 }
 @media (min-width: 768px) {
@@ -442,7 +511,7 @@ body {
   border: 1px solid var(--heading);
 }
 .mainsection .contactme .contact .input-details input:not(:-moz-placeholder) + label, .mainsection .contactme .contact .input-details textarea:not(:-moz-placeholder) + label {
-  top: -12px;
+  top: -10px;
   left: 10px;
   background-color: var(--input-focus);
   padding: 0px 4px;
@@ -451,7 +520,7 @@ body {
 .mainsection .contactme .contact .input-details input:focus + label, .mainsection .contactme .contact .input-details input:not(:placeholder-shown) + label,
 .mainsection .contactme .contact .input-details textarea:focus + label,
 .mainsection .contactme .contact .input-details textarea:not(:placeholder-shown) + label {
-  top: -12px;
+  top: -10px;
   left: 10px;
   background-color: var(--input-focus);
   padding: 0px 4px;
@@ -472,7 +541,7 @@ body {
   left: 17px;
   top: 17px;
   transition: all 0.2s ease-in-out;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: capitalize;

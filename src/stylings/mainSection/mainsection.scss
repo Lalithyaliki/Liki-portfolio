@@ -21,6 +21,71 @@ body {
         scroll-margin-top: 95px;
     }
 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:var(--sending-bg);
+        opacity: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition:all .2s ease-in-out;
+
+
+        .sending {
+            color: var(--input-color);
+            display: flex;
+            align-items: center;
+            font-family:'Poppins',sans-serif;
+            font-size: 17px;
+
+            .dots span {
+                display: inline-block;
+                margin-left: 5px;
+                font-size: 15px;
+                font-weight: 700;
+                animation: blink 1s infinite;
+
+               &:nth-child(1) {
+                    animation-delay: 0s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+
+            }
+
+            @keyframes blink {
+
+            0%,
+            20% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+        }
+    }
+    .show {
+        display: flex;
+        opacity: 1;
+    }
+
     .heading {
         display: block;
         width: max-content;
@@ -378,19 +443,32 @@ body {
 
         .pop {
             position: fixed;
-            top: 10.7%;
+            top: 10.10%;
             left: -100%;
             transform: translateX(-50%);
             border: 1px solid grey;
-            background-color: transparent;
-            font-size: 17px;
-            color: var(--input-color);
-            width: 60%;
-            padding: 10px;
+            background-color: lightgreen;
+            font-size: 12px;
+            color: black;
+            width: 75%;
+            padding: 7px;
+            letter-spacing: 1px;
             text-align: center;
             box-shadow: 0px 0px 10px grey;
             text-transform: capitalize;
             transition: all .4s ease-in-out;
+            z-index: 999;
+
+            @include query('sm') {
+                width: 55%;
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            @include query('lg') {
+                width: 40%;
+                font-size: 15px;
+            }
 
         }
 
@@ -424,11 +502,11 @@ body {
                     width: 100%;
                     outline: none;
                     padding: 15px;
+                    letter-spacing: 1px;
                     background-color: transparent;
-                    text-transform: capitalize;
                     border: 1px solid grey;
                     border-radius: 10px;
-                    font-size: 15px;
+                    font-size: 14px;
                     color: var(--input-color);
 
                     @include query("md") {
@@ -441,7 +519,7 @@ body {
 
                     &:focus+label,
                     &:not(:placeholder-shown)+label {
-                        top: -12px;
+                        top: -10px;
                         left: 10px;
                         background-color: var(--input-focus);
                         padding: 0px 4px;
@@ -464,7 +542,7 @@ body {
                     left: 17px;
                     top: 17px;
                     transition: all .2s ease-in-out;
-                    font-size: 14px;
+                    font-size: 13px;
                     font-weight: 600;
                     letter-spacing: 1px;
                     text-transform: capitalize;

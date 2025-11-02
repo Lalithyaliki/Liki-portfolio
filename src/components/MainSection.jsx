@@ -16,17 +16,18 @@ import { Link } from "react-router-dom";
 
 function MainSection() {
 
+    const [showloading, setloading] = useState(false);
     const [popup, setpopup] = useState(false);
     const [input, setinput] = useState({
         name: "",
         email: "",
-        textarea: "",
+        message: "",
     });
 
     const [error, seterror] = useState({
         name: false,
         email: false,
-        textarea: false,
+        message: false,
     });
 
     const onchange = (e) => {
@@ -39,38 +40,52 @@ function MainSection() {
         }
     }
 
-    const onsubmit = (e) => {
+    const onsubmit = async (e) => {
         e.preventDefault();
 
         const a = ({
             name: input.name.trim() === "",
             email: input.email.trim() === "",
-            textarea: input.textarea.trim() === "",
+            message: input.message.trim() === "",
         });
 
         seterror(a);
 
+
         if (Object.values(a).some((err) => (err))) {
             return;
         }
-        setpopup(true);
 
-        setTimeout(() => {
-            setpopup(false);
-        }, 3000);
+        setloading(true);
 
-        const z = {
-            name: input.name,
-            email: input.email,
-            textarea: input.textarea,
+        // Fetch API
+        let data = await fetch("https://formspree.io/f/xdkwvpbb", {
+            method: "POST",
+            body: JSON.stringify(input),
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        });
+
+
+        setloading(false);
+
+        if (data.ok) {
+
+            setpopup(true);
+
+            setTimeout(() => {
+                setpopup(false);
+            }, 3000);
+
+            setinput({
+                name: "",
+                email: "",
+                message: "",
+            })
+
         }
-        console.log(z);
-
-        setinput({
-            name: "",
-            email: "",
-            textarea: "",
-        })
 
     }
 
@@ -86,7 +101,18 @@ function MainSection() {
     };
 
     return (
+
         <div className="mainsection">
+
+            <div className={showloading ? "overlay show" : "overlay"}>
+                <div className="sending">
+                    sending <div className="dots">
+                        <span>.</span>
+                        <span>.</span>
+                        <span>.</span>
+                    </div>
+                </div>
+            </div>
 
             <motion.div variants={container}
                 initial="hidden"
@@ -202,17 +228,19 @@ function MainSection() {
                             <label htmlFor="email">Email *</label>
                         </div>
                         <div className="input-details text-area">
-                            <textarea type="textarea"
-                                value={input.textarea}
+                            <textarea
+                                id="textarea"
+                                value={input.message}
                                 onChange={onchange}
-                                name="textarea"
-                                className={error.textarea ? "error" : ""}
+                                name="message"
+                                className={error.message ? "error" : ""}
                                 placeholder=""></textarea>
                             <label htmlFor="textarea">Enter message *</label>
                         </div>
                         <button type="submit" className="btn">
                             send  <i className="bi-arrow-right-circle"></i>
                         </button>
+
                     </form>
                 </div>
             </motion.div>
