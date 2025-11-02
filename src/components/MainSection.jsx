@@ -201,7 +201,7 @@ function MainSection() {
             </motion.div>
 
             <motion.div {...fadeInUp} className="aboutme contactme" id="contactMe">
-                <p className={popup ? "pop open" : "pop"}>I got you, i will come back too you!</p>
+                <p className={popup ? "pop open" : "pop"}>I got your data,and I’ll get back to you soon!</p>
                 <h2 className="heading global-text">Contact Me</h2>
                 <div className="contact">
                     <form onSubmit={onsubmit} autoComplete="off" >
