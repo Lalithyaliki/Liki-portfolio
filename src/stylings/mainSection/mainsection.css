@@ -454,8 +454,6 @@ body {
 @media (min-width: 576px) {
   .mainsection .contactme .pop {
     width: 55%;
-    font-size: 14px;
-    padding: 10px;
   }
 }
 @media (min-width: 1024px) {
@@ -503,7 +501,7 @@ body {
 @media (min-width: 768px) {
   .mainsection .contactme .contact .input-details input,
   .mainsection .contactme .contact .input-details textarea {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 .mainsection .contactme .contact .input-details input:focus,
@@ -515,6 +513,7 @@ body {
   left: 10px;
   background-color: var(--input-focus);
   padding: 0px 4px;
+  font-size: 11px;
   color: var(--label-focus);
 }
 .mainsection .contactme .contact .input-details input:focus + label, .mainsection .contactme .contact .input-details input:not(:placeholder-shown) + label,
@@ -524,6 +523,7 @@ body {
   left: 10px;
   background-color: var(--input-focus);
   padding: 0px 4px;
+  font-size: 11px;
   color: var(--label-focus);
 }
 .mainsection .contactme .contact .input-details input.error,

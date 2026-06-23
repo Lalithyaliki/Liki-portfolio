@@ -18,6 +18,20 @@ function MainSection() {
 
     const [showloading, setloading] = useState(false);
     const [popup, setpopup] = useState(false);
+
+    useEffect(() => {
+        if (showloading) {
+            document.body.style.overflow = "hidden";
+        }
+        else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        }
+    }, [showloading]);
+
     const [input, setinput] = useState({
         name: "",
         email: "",
@@ -56,34 +70,56 @@ function MainSection() {
             return;
         }
 
-        setloading(true);
+        try {
+            setloading(true);
 
-        // Fetch API
-        let data = await fetch("https://formspree.io/f/xdkwvpbb", {
-            method: "POST",
-            body: JSON.stringify(input),
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
+            // Fetch API
+            let data = await fetch("https://formspree.io/f/xdkwvpbb", {
+                method: "POST",
+                body: JSON.stringify(input),
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                }
+            });
+
+            if (!data.ok) {
+                throw new Error("server Error: " + data.status);
             }
-        });
-
-
-        setloading(false);
-
-        if (data.ok) {
-
-            setpopup(true);
 
             setTimeout(() => {
-                setpopup(false);
-            }, 3000);
+                setloading(false);
+                setpopup("success");
+
+                setinput({
+                    name: "",
+                    email: "",
+                    message: "",
+                });
+
+                setTimeout(() => {
+                    setpopup(false);
+                }, 3000);
+
+            }, 2000);
+
+
+        }
+        catch (error) {
+            console.log("Fetch Error:", error);
+
+            setloading(false);
+            setpopup("error");
 
             setinput({
                 name: "",
                 email: "",
                 message: "",
-            })
+            });
+
+            setTimeout(() => {
+                setpopup(false);
+            }, 3000);
 
         }
 
@@ -144,7 +180,7 @@ function MainSection() {
                 <div className="details">
                     <div className="mydetails">
                         <h2 className="heading global-text">About Me</h2>
-                        <p> <span>I'</span>m Likitha, currently studying in my 4th year of B.Tech in Electronics and Communication Engineering (ECE). While my academic background is in electronics, I've developed a strong passion for software development. I'm currently working on enhancing my skills in frontend development and actively learning technologies like HTML, CSS, JavaScript, and React. In addition, I’m gaining hands-on experience in backend and programming languages including Java, SQL, and Python. I enjoy solving problems, building user-friendly applications, and continuously expanding my technical knowledge. I believe that with consistency, curiosity, and hard work, I can grow into a well-rounded software developer ready to take on real-world challenges.</p>
+                        <p> <span>I'</span>m Likitha, i recently completed  by B.Tech in Electronics and Communication Engineering (ECE). While my academic background is in electronics, I've developed a strong passion for software development. I'm currently working on enhancing my skills in frontend development and actively learning technologies like HTML, CSS, JavaScript, and React. In addition, I’m gaining hands-on experience in backend and programming languages including Java, SQL, and Python. I enjoy solving problems, building user-friendly applications, and continuously expanding my technical knowledge. I believe that with consistency, curiosity, and hard work, I can grow into a well-rounded software developer ready to take on real-world challenges.</p>
                     </div>
                     <div className="profile-image">
                         <img src={image} alt="my-profile"></img>
@@ -201,7 +237,9 @@ function MainSection() {
             </motion.div>
 
             <motion.div {...fadeInUp} className="aboutme contactme" id="contactMe">
-                <p className={popup ? "pop open" : "pop"}>I got your data,and I’ll get back to you soon!</p>
+                <p className={popup ? "pop open" : "pop"}>{popup === "success" && "I got your data,and I’ll get back to you soon!"}
+                    {popup === "error" && "Something went wrong. Please try again!"}
+                </p>
                 <h2 className="heading global-text">Contact Me</h2>
                 <div className="contact">
                     <form onSubmit={onsubmit} autoComplete="off" >

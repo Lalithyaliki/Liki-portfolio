@@ -1,11 +1,13 @@
 import '../stylings/header/header.css';
 import image from '../images/llogo.jpeg';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState , useRef} from 'react'
 import { useLocation } from 'react-router-dom';
 
 function Header() {
 
     const location = useLocation();
+
+    const navRef = useRef(null);
 
     const hidenavlinks = location.pathname === "/projects";
 
@@ -18,6 +20,29 @@ function Header() {
         }
         setlinks(false);
     };
+
+    useEffect(() => {
+        if (openlinks) {
+            document.body.style.overflow = "hidden";
+        }
+        else {
+            document.body.style.overflow = "auto";
+        }
+
+        const closeNavLinks = (e) => {
+            if(navRef.current && !navRef.current.contains(e.target)){
+                setlinks(false);
+            }
+        };
+
+        document.addEventListener("mousedown",closeNavLinks);
+
+        return () => {
+            document.body.style.overflow = "auto";
+            document.removeEventListener("mousedown",closeNavLinks);
+        }
+    }, [openlinks])
+
 
     const [theme, settheme] = useState(() => {
         return sessionStorage.getItem("theme") || "dark";
@@ -32,6 +57,7 @@ function Header() {
         settheme((prev) => (prev === "light" ? "dark" : "light"))
     }
 
+
     return (
         <div className='navigation'>
 
@@ -41,7 +67,9 @@ function Header() {
             </a>
 
             {!hidenavlinks && (
-                <div className={openlinks ? "nav-links active" : "nav-links"}>
+                <div 
+                ref={navRef}
+                className={openlinks ? "nav-links active" : "nav-links"}>
                     <div className='nav-links-close-btn'>
                         <button className='btn' onClick={() => setlinks(false)}>X</button>
                     </div>

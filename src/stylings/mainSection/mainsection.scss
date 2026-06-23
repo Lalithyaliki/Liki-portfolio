@@ -34,8 +34,7 @@ body {
         align-items: center;
         z-index: 9999;
         transition:all .2s ease-in-out;
-
-
+        
         .sending {
             color: var(--input-color);
             display: flex;
@@ -461,8 +460,6 @@ body {
 
             @include query('sm') {
                 width: 55%;
-                font-size: 14px;
-                padding: 10px;
             }
 
             @include query('lg') {
@@ -510,7 +507,7 @@ body {
                     color: var(--input-color);
 
                     @include query("md") {
-                        font-size: 17px;
+                        font-size: 15px;
                     }
 
                     &:focus {
@@ -523,6 +520,7 @@ body {
                         left: 10px;
                         background-color: var(--input-focus);
                         padding: 0px 4px;
+                        font-size:11px;
                         color: var(--label-focus);
                     }
 
